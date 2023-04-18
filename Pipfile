@@ -1,0 +1,23 @@
+[[source]]
+url = "https://pypi.org/simple"
+verify_ssl = true
+name = "pypi"
+
+[dev-packages]
+gspread = "*"
+jupyter = "*"
+coverage = "*"
+pytest = "*"
+pytest-django = "*"
+pytest-mock = "*"
+black = "*"
+mock = "*"
+gspread_dataframe = "*"
+
+[packages]
+django = "*"
+djangorestframework = "*"
+django-rest-swagger = "*"
+
+[requires]
+python_version = "3.7"

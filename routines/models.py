@@ -141,6 +141,7 @@ class Routine(BaseModel):
     days_of_week = models.ManyToManyField(Day, through="RoutineDaysBlocks", blank=True)
     goals = models.ManyToManyField(Goal)
     level = models.ForeignKey(Level, on_delete=models.DO_NOTHING)
+    status = models.ForeignKey(Status, on_delete=models.DO_NOTHING)
 
 
 class RoutineDaysBlocks(BaseModel):

@@ -23,7 +23,14 @@ router = routers.DefaultRouter()
 router.register(r"exercises", views.ExerciseViewSet)
 router.register(r"routines", views.RoutineViewSet)
 router.register(r"routines-blocks", views.RoutineBlockViewSet)
+router.register(r"routines-blocks-days", views.RoutineDaysBlocksViewSet)
 router.register(r"blocks", views.BlocksViewSet)
+router.register(r"restrictions", views.RestrictionsViewSet)
+router.register(r"exercise-type", views.ExerciseTypeViewSet)
+router.register(r"muscle-group", views.MuscleGroupViewSet)
+router.register(r"routine-types", views.RoutineTypesViewSet)
+router.register(r"levels", views.LevelViewSet)
+router.register(r"status", views.StatusViewSet)
 
 urlpatterns = [
     url(r"^api/", include(router.urls)),

@@ -40,6 +40,11 @@ class Command(BaseCommand):
                 routine_type = _get_or_create_obj(
                     RoutineType, name=_item.get("routine_type")
                 )
+                status_type_routine = _get_or_create_obj(StatusType, name="routine")
+
+                status = _get_or_create_obj(
+                    Status, name=_item.get("status"), status_type=status_type_routine
+                )
 
                 level = _get_or_create_obj(Level, name=_item.get("level"))
 
@@ -64,6 +69,7 @@ class Command(BaseCommand):
                     description=_item.get("description"),
                     routine_type=routine_type,
                     level=level,
+                    status=status,
                     creator=creator,
                     system=system,
                     cadence=cadence,

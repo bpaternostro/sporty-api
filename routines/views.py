@@ -1,37 +1,9 @@
 from django.shortcuts import render
 from django.http import HttpResponse, JsonResponse
 from django.shortcuts import get_list_or_404
-from .models import Exercise, Routine, RoutineDaysBlocks, Block
-from rest_framework import serializers, viewsets, permissions
 
-
-# Serializers define the API representation.
-class BlockSerializer(serializers.ModelSerializer):
-    class Meta:
-        model = Block
-        fields = "__all__"
-
-
-class ExerciseSerializer(serializers.ModelSerializer):
-    class Meta:
-        model = Exercise
-        fields = "__all__"
-        depth = 1
-
-
-class RoutineDaysBlocksSerializer(serializers.ModelSerializer):
-    blocks = BlockSerializer(many=True)
-
-    class Meta:
-        model = RoutineDaysBlocks
-        fields = "__all__"
-
-
-class RoutineSerializer(serializers.ModelSerializer):
-    class Meta:
-        model = Routine
-        fields = "__all__"
-        depth = 1
+from rest_framework import viewsets, permissions
+from .serializers import *
 
 
 # Create your views here.
@@ -84,3 +56,59 @@ class BlocksViewSet(viewsets.ModelViewSet):
         permissions.AllowAny,
     ]
     serializer_class = BlockSerializer
+
+
+class RestrictionsViewSet(viewsets.ModelViewSet):
+    queryset = Restriction.objects.all()
+    permission_classes = [
+        permissions.AllowAny,
+    ]
+    serializer_class = RestrictionSerializer
+
+
+class ExerciseTypeViewSet(viewsets.ModelViewSet):
+    queryset = ExerciseType.objects.all()
+    permission_classes = [
+        permissions.AllowAny,
+    ]
+    serializer_class = ExerciseTypeSerializer
+
+
+class MuscleGroupViewSet(viewsets.ModelViewSet):
+    queryset = MuscleGroup.objects.all()
+    permission_classes = [
+        permissions.AllowAny,
+    ]
+    serializer_class = MuscleGroupSerializer
+
+
+class RoutineTypesViewSet(viewsets.ModelViewSet):
+    queryset = RoutineType.objects.all()
+    permission_classes = [
+        permissions.AllowAny,
+    ]
+    serializer_class = RoutineTypeSerializer
+
+
+class LevelViewSet(viewsets.ModelViewSet):
+    queryset = Level.objects.all()
+    permission_classes = [
+        permissions.AllowAny,
+    ]
+    serializer_class = LevelSerializer
+
+
+class StatusViewSet(viewsets.ModelViewSet):
+    queryset = Status.objects.all()
+    permission_classes = [
+        permissions.AllowAny,
+    ]
+    serializer_class = StatusSerializer
+
+
+class RoutineDaysBlocksViewSet(viewsets.ModelViewSet):
+    queryset = RoutineDaysBlocks.objects.all()
+    permission_classes = [
+        permissions.AllowAny,
+    ]
+    serializer_class = RoutineDaysBlocksSerializer

@@ -18,6 +18,9 @@ gspread_dataframe = "*"
 django = "*"
 djangorestframework = "*"
 django-rest-swagger = "*"
+gspread = "*"
+pillow = "*"
+googletrans = "==3.1.0a0"
 
 [requires]
-python_version = "3.7"
+python_version = "3.8"

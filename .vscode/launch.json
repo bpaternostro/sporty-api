@@ -8,7 +8,7 @@
       "name": "Python: Django -> runserver",
       "type": "python",
       "request": "launch",
-      "program": "${workspaceFolder}\\manage.py",
+      "program": "${workspaceFolder}/manage.py",
       "args": ["runserver"],
       "django": true,
       "justMyCode": true
@@ -17,7 +17,7 @@
       "name": "Python: Django -> makemigrations",
       "type": "python",
       "request": "launch",
-      "program": "${workspaceFolder}\\manage.py",
+      "program": "${workspaceFolder}/manage.py",
       "args": ["makemigrations"],
       "django": true,
       "justMyCode": true
@@ -26,8 +26,17 @@
       "name": "Python: Django -> migrate",
       "type": "python",
       "request": "launch",
-      "program": "${workspaceFolder}\\manage.py",
+      "program": "${workspaceFolder}/manage.py",
       "args": ["migrate"],
+      "django": true,
+      "justMyCode": true
+    },
+    {
+      "name": "Python: Django --> import customers",
+      "type": "python",
+      "request": "launch",
+      "program": "${workspaceFolder}/manage.py",
+      "args": ["import_customer"],
       "django": true,
       "justMyCode": true
     },
@@ -35,7 +44,7 @@
       "name": "Python: Django -> import_muscle_group",
       "type": "python",
       "request": "launch",
-      "program": "${workspaceFolder}\\manage.py",
+      "program": "${workspaceFolder}/manage.py",
       "args": ["import_muscle_group"],
       "django": true,
       "justMyCode": true
@@ -44,7 +53,7 @@
       "name": "Python: Django -> import_exercises",
       "type": "python",
       "request": "launch",
-      "program": "${workspaceFolder}\\manage.py",
+      "program": "${workspaceFolder}/manage.py",
       "args": ["import_exercises"],
       "django": true,
       "justMyCode": true
@@ -53,7 +62,7 @@
       "name": "Python: Django import_blocks",
       "type": "python",
       "request": "launch",
-      "program": "${workspaceFolder}\\manage.py",
+      "program": "${workspaceFolder}/manage.py",
       "args": ["import_blocks"],
       "django": true,
       "justMyCode": true
@@ -62,7 +71,7 @@
       "name": "Python: Django import_routines",
       "type": "python",
       "request": "launch",
-      "program": "${workspaceFolder}\\manage.py",
+      "program": "${workspaceFolder}/manage.py",
       "args": ["import_routines"],
       "django": true,
       "justMyCode": true
@@ -71,7 +80,7 @@
       "name": "Python: Django import_routines_days_blocks",
       "type": "python",
       "request": "launch",
-      "program": "${workspaceFolder}\\manage.py",
+      "program": "${workspaceFolder}/manage.py",
       "args": ["import_routines_days_blocks"],
       "django": true,
       "justMyCode": true

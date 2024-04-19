@@ -1,0 +1,14 @@
+.playerContainer{
+    border-radius: 2rem;
+    display: flex;
+    flex-direction: column;
+    gap: 4rem;
+    align-items: center;
+    width: 100%;
+    color: var(--text-color);
+}
+
+
+.playerContainer > div{
+    width: 100%;
+}

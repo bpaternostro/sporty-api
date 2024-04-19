@@ -1,0 +1,157 @@
+.contactFormContainer{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    padding: 15px;
+}
+
+form{
+    display: flex;
+    flex-direction: column;
+    gap:10px;
+    width: 100%;
+}
+
+label{
+    font-family: var(--font-family);
+    font-size: 16px;
+    font-weight: var(--font-weight);
+    line-height: normal;
+    margin: 3px;
+}
+
+label > span{
+    color: var(--color-white);
+}
+
+.label{
+    color: var(--color-white);
+}
+input, textarea{
+    width: 100%;
+    border-radius: 8px;
+    border: 0.5px solid var(--grey-light);
+    padding: 3px 8px 3px 16px;
+}
+
+input{
+    height: 40px;
+}
+
+input::placeholder {
+    color: var(--gray-blue-grey-blue-50);
+    font-weight: var(--font-weight-light);
+}
+
+textarea{
+    width: 100%;
+}
+
+.contactFormContainer{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap:25px;
+    height: auto;
+    width: 40vw;
+    padding: 50px;
+    border-radius: 16px;
+    border: 3px solid var(--side-bar-background-color);
+    background-color: var(--body-background-combination);
+}
+
+.contactFormContainer > form > div:nth-child(2){
+    display: flex;
+    align-items: center;
+    justify-content: end;
+
+}
+.contactFormContainer > h1{
+    width: 100%;
+    text-align: left;
+}
+
+.contactContainer > div > form > div:nth-child(1){
+    display: flex;
+    flex-direction: column;
+    gap:10px;
+    justify-content: center;
+    align-items: start;
+}
+
+.toolBar{
+    display: flex;
+    justify-content: end;
+    align-items: end;
+}
+
+.contactFormContainerTitle{
+    color: var(--grey-dark, #586870);
+    /* title/H5 */
+    font-family: var(--font-family-links-2);
+    font-size: 18px;
+    font-weight: var(--font-weight);
+    text-align: left;
+    width: 100%;
+}
+
+.forwardLinkContainer{
+    display: flex;
+    align-items: center;
+    gap: 5px;
+    padding: 5px;
+    color: var(--color-white);
+}
+
+.contactFormContainer > form > div:nth-child(1) > span{
+    position: relative;
+    width: 100%;
+    display: flex;
+    align-items: center;
+}
+
+
+.contactFormContainer > form > div:nth-child(1) > span > span{
+    position: absolute;
+    right: 10px;
+    color: var(--body-background-combination);
+}
+
+.forwardMessage{
+    font-size: 12px;
+    font-weight: var(--font-weight);
+}
+
+@media screen and (max-width: 1200px) {
+    .contactContainer{
+        width: 98%;
+        padding: 15px;
+    }
+
+    .contactFormContainer{
+        padding: 30px;
+        width: 60vw;
+    }
+}
+
+@media screen and (max-width: 900px) {
+
+    .contactFormContainer{
+        padding: 30px;
+        width: 90%;
+    }
+    .forwardLinkContainer{
+        flex-direction: column;
+        align-items: start;
+    }
+}
+
+@media screen and (max-width: 500px) {
+    .contactFormContainer{
+        padding: 30px;
+        width: 100%;
+    }
+   
+}

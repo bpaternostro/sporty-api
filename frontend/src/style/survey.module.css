@@ -1,0 +1,201 @@
+form{
+    display: flex;
+    flex-direction: column;
+    gap:15px;
+    width: 100%;
+}
+
+label{
+    font-family: var(--font-family);
+    font-size: 16px;
+    font-weight: var(--font-weight);
+    line-height: normal;
+    margin: 3px;
+}
+
+label > span{
+    color: var(--color-white);
+}
+
+input, textarea{
+    width: 100%;
+    border-radius: 8px;
+    border: 0.5px solid var(--grey-light);
+    padding: 3px 8px 3px 16px;
+}
+
+input{
+    height: 40px;
+}
+
+input::placeholder {
+    color: var(--gray-blue-grey-blue-50);
+    font-weight: var(--font-weight-light);
+}
+
+textarea{
+    width: 100%;
+}
+
+.disabledInput{
+    color: var(--color-white)
+}
+
+.surveyFormContainer{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap:25px;
+    height: auto;
+    width: 60vw;
+    padding: 50px;
+    border-radius: 16px;
+    border: 3px solid var(--side-bar-background-color);
+    background-color: var(--body-background-combination);
+}
+
+
+.surveyFormContainer > h1{
+    width: 100%;
+    text-align: left;
+}
+
+.surveyContainer > div > form > div:nth-child(1){
+    display: flex;
+    flex-direction: column;
+    gap:15px;
+    justify-content: center;
+    align-items: start;
+}
+
+.surveySectionFormContainer{
+    display: flex;
+    flex-direction: column;
+    gap:15px;
+    justify-content: start;
+    padding: 10px;
+}
+
+
+.surveySectionFormContainer > label, .surveySectionFormContainer > select{
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    gap:10px;
+}
+
+.surveySectionFormContainer > label > span{
+    padding: 5px;
+    display: flex;
+    align-items: center;
+    gap:5px;
+}
+
+.toolBar{
+    display: flex;
+    justify-content: end;
+    align-items: end;
+    gap:10px;
+    padding: 20px;
+}
+
+.surveyFormContainerTitle{
+    color: var(--grey-dark, #586870);
+    /* title/H5 */
+    font-family: var(--font-family-links-2);
+    font-size: 18px;
+    font-weight: var(--font-weight);
+    text-align: left;
+    width: 100%;
+}
+
+.surveyCheckBoxContainer{
+    display: flex;
+    align-items: center;
+    flex-wrap: wrap;
+}
+
+.surveyCheckBoxContainer > label{ 
+    display: flex;
+    align-items: center;
+    justify-content: start;
+    gap:5px;
+    width: 100%;
+}
+
+.surveySectionFormContainer:nth-child(2) > span > label{
+    display: flex;
+    flex-direction: column;
+    gap:5px;
+    width: 100%;
+}
+
+.surveySectionFormContainer:nth-child(2) > span > label > span{
+    display: flex;
+    align-items: center;
+    gap:5px;
+}
+
+.forwardLinkContainer{
+    display: flex;
+    align-items: center;
+    gap: 5px;
+    padding: 5px;
+    color: var(--color-white);
+}
+
+
+.surveyFormContainer > form > div:nth-child(1) > span > span{
+    position: absolute;
+    right: 10px;
+    color: var(--body-background-combination);
+}
+
+.surveySectionFormDetail{
+    font-size: 11px;
+}
+
+.surveySectionFormContainer:nth-child(2) > span{
+    display: flex;
+    flex-direction: row;
+}
+
+.errorFormContainer{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 10px;
+}
+
+@media screen and (max-width: 1200px) {
+    .surveyContainer{
+        width: 98%;
+        padding: 15px;
+    }
+
+    .surveyFormContainer{
+        padding: 10px;
+        width: 60vw;
+    }
+}
+
+@media screen and (max-width: 900px) {
+
+    .surveyFormContainer{
+        padding: 50px;
+        width: 90%;
+    }
+    .forwardLinkContainer{
+        flex-direction: column;
+        align-items: start;
+    }
+}
+
+@media screen and (max-width: 500px) {
+    .surveyFormContainer{
+        padding: 20px 5px;
+        width: 100%;
+    }
+   
+}

@@ -1,0 +1,9 @@
+.exerciseContainer{
+    font-size: 16px;
+    color: var(--color-white);
+}
+
+.exerciseContainer > div{
+    display: flex;
+    gap:5px;
+}

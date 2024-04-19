@@ -1,0 +1,106 @@
+footer{
+    display: flex;
+    align-items: start;
+    justify-content: space-around;
+    color: var(--color-white);
+    font-feature-settings: 'clig' off, 'liga' off;
+    /* Medium/Medium 14 */
+    font-family: var(--font-family-links);
+    font-size: var(--font-size-section);
+    font-style: normal;
+    font-weight: 500;
+    padding: 60px 80px 150px 80px;
+    background-color: var(--body-background-combination);
+    color: var(--prime-letter-color);
+    min-height: auto;
+    width: 100vw;
+}
+
+footer h4{
+    font-weight: var(--font-weight);
+    font-family: var(--font-family-links);
+    font-size: var(--font-size-subtitles);
+}
+
+footer div:nth-child(1){
+    display: flex;
+    flex-direction: column;
+    align-items: start;
+    justify-content: start;
+}
+
+footer div:nth-child(1) > h3 {
+    padding: 5px 5px 10px 0px;
+    font-family: var(--font-family-links);
+    font-size: var(--font-size-titles);
+}
+
+footer div:nth-child(1) p{
+    color: var(--color-white);
+    font-size: var(--font-size-section);
+    font-style: normal;
+    font-weight: var(--font-weight);
+    line-height: 30px; /* 214.286% */
+}
+
+footer div:nth-child(2){
+    display: flex;
+    align-items: start;
+    justify-content: space-around;
+    width: 50%;
+}
+
+
+footer div:nth-child(2) span{
+    display: flex;
+    flex-direction: column;
+    align-items: start;
+    justify-content: space-between;
+    gap:20px;
+}
+
+footer div:nth-child(2) span a{
+    font-weight: var(--font-weight);
+} 
+
+footer div:nth-child(3){    
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+    align-items: start;
+    justify-content: start;
+    color: var(--gray-blue-grey-blue-80);
+    font-size: var(--font-size-section);
+    font-style: normal;
+    font-weight: var(--font-weight);
+    line-height: 20px; /* 166.667% */
+}
+
+
+@media screen and (max-width: 900px) {
+    footer{
+        flex-direction: column;
+        gap:25px
+    }
+
+    footer > div:nth-child(2){
+        justify-content: space-between;
+        width: 100%;
+    }
+
+    footer > div:nth-child(2) > span.howToPlace {
+        display: none;
+    }
+}
+
+@media screen and (max-width: 500px) {
+   
+    footer{
+        padding: 40px 50px 50px 40px;
+    }
+
+    footer > div:nth-child(2){
+        justify-content: space-between;
+    }
+
+}

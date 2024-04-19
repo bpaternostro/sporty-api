@@ -1,0 +1,142 @@
+.block-mark {
+    width: 15px;
+    height: 15px;
+    border: 2px solid var(--body-background-color);
+    background-color: var(--color-white);
+    cursor: pointer;
+    border-radius: 50%;
+  }
+  
+.block-mark.block-mark-active {
+  border: 2px solid var(--color-th);
+  background-color: var(--body-background-combination);
+}
+
+.block-mark.block-mark-completed {
+  border: 2px solid var(--body-background-combination);
+  background-color: var(--block-slider);;
+}
+
+.block-thumb {
+  font-size: 0.9em;
+  text-align: center;
+  background-color: black;
+  color: white;
+  cursor: pointer;
+  box-sizing: border-box;
+}
+
+.block-thumb.active {
+  background-color: grey;
+}
+
+.block-track {
+  position: relative;
+  background: #ddd;
+}
+
+.block-track.block-track-0 {
+  background: var(--block-slider);;
+}
+
+.horizontalSlider{
+ display: flex;
+ align-items: center;
+}
+
+.first-step-container, .horizontalSlider{
+  width: 97%;
+}
+
+.horizontalSlider .block-thumb {
+  left: 1px;
+  width: 48px;
+  line-height: 40px;
+  height: 50px;
+}
+
+.horizontalSlider .block-track {
+  height: 3px;
+}
+
+
+.steps-container {
+  display: flex;
+  justify-content: space-between;
+  width: 100%;
+}
+
+.steps-item {
+  font-size: 14px;
+  letter-spacing: 0.5px;
+  text-align: center;
+  cursor: pointer;
+}
+
+.first-step-container > .steps-container > .steps-item:nth-child(2n){  
+  visibility: hidden;
+}
+
+.second-step-container > .steps-container > .steps-item:nth-child(2n - 1){  
+  visibility: hidden;
+}
+
+
+.formContainer {
+  height: 100%;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.formContainer > h3{
+  font-size: 20px;
+}
+
+.formContainer > div{
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+
+.form {
+  margin: auto;
+}
+
+.btn-primary {
+  width: 120px;
+  border: 0;
+  padding: 8px;
+  border-radius: 15px;
+  color: white;
+  background: var(--block-slider);;
+  cursor: pointer;
+}
+
+
+@media screen and (max-width: 1000px) {
+  .steps-item{
+    font-size: 12px;
+  }
+  .first-step-container, .horizontalSlider{
+    width: 95%;
+  }
+}
+
+@media screen and (max-width: 500px) {
+  .steps-item{
+    font-size: 11px;
+  }
+  .first-step-container, .horizontalSlider{
+    width: 95%;
+  }
+}
+
+@media screen and (max-width: 300px) {
+  .steps-item{
+    font-size: 9px;
+  }
+  
+}

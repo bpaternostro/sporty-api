@@ -1,0 +1,68 @@
+.identifyButtonContainer{
+    display: flex;
+    flex-direction: column;
+    justify-content: top;
+    align-items: center;
+    padding: 15px;
+    gap: 25px;
+}
+
+.identifyButtonContainer > h1{
+    text-align: center;
+}
+
+.identifyButtonContainer > div{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 10px;
+}
+
+.identifyButtonContainer > div > div{
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    align-items: center;
+    width: 100%;
+    width: 300px;
+}
+
+
+.identifyButtonContainer > div > div > span {
+    display: flex;
+    align-items: center;
+}
+
+.identifyButtonContainer > div > div{
+    background-color: var(--body-background-combination);
+    padding: 20px;
+    border-radius: 10px;
+    border: 3px solid var(--side-bar-background-color);
+}
+
+@media screen and (max-width: 900px) {
+    .contactContainer{
+        width: 100%;
+        padding: 15px;
+    }
+
+    .contactFormContainer{
+        padding: 30px;
+        width: 100%;
+    }
+}
+
+@media screen and (max-width: 600px) {
+    .identifyButtonContainer{
+        padding: 10px;
+    }
+
+    .identifyButtonContainer > div{
+        flex-direction: column;
+        gap: 30px;
+    }
+
+    .identifyButtonContainer > div > div{
+        width: 100%;
+    }
+}

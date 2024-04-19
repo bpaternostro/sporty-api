@@ -1,0 +1,33 @@
+.npsContainer{
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+    gap:10px;
+    width: 100%;
+}
+
+.npsButton{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    border: 2px solid var(--color-white);
+    background-color: var(--color-nps);
+}
+
+.activated{
+    width: 45px;
+    height: 45px;
+    border: 5px solid var(--color-white);
+}
+
+@media screen and (max-width: 500px) {
+    .npsButton{
+        width: 30px;
+        height: 30px;
+    }
+   
+}

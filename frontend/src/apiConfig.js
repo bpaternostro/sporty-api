@@ -1,4 +1,4 @@
-const ENV = "local"
+const ENV = "prod"
 const API_BASE_URL = ENV == "prod" ? 'https://bpaternostro.site/fitbox/api' : "http://localhost:8000/fitbox/api";
 
 export const ICON_SIZE_BIG = 40

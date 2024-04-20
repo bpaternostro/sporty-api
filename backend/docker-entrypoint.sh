@@ -14,12 +14,15 @@ python manage.py migrate auth
 python manage.py migrate contenttypes
 python manage.py migrate sessions
 
-# Apply migrations for the 'manager' app
-echo "Applying migrations for 'fitbox' app..."
+# Make migrations for the 'manager' app
+echo "Making migrations for 'fitbox' app..."
 python manage.py makemigrations authentication
 python manage.py makemigrations customers
 python manage.py makemigrations main
-python manage.py migrate
+python manage.py makemigrations routines
+
+# Apply migrations for the 'manager' app
+echo "Migrating"
 python manage.py migrate main
 python manage.py migrate customers
 python manage.py migrate authentication

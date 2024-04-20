@@ -1,12 +1,12 @@
 {
-  "name": "trader",
+  "name": "fitbox",
   "private": true,
   "version": "0.0.0",
   "type": "module",
-  "homepage": "./trader",
+  "homepage": "./fitbox",
   "scripts": {
     "dev": "vite",
-    "build": "vite build --base /trader",
+    "build": "vite build --base /fitbox",
     "lint": "eslint . --ext js,jsx --report-unused-disable-directives --max-warnings 0",
     "preview": "vite preview"
   },

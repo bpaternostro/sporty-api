@@ -50,8 +50,7 @@ coverage.xml
 docs/_build/
 db.sqlite3
 
-brucetrader/settings_local.py
-brucetrader/settingsold.py
+fitbox/settings_local.py
 
 media/
 

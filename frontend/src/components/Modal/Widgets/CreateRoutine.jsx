@@ -36,38 +36,6 @@ const CreateRoutine = () => {
         setFormValues(aux)
     }
 
-    const handleSubmit = async (e) => {
-        e.preventDefault()
-        fetch(isCreatePortfolioModal ? `${API_ENDPOINTS.traderCreatePortfolio}/${localStorage.getItem("operator")}/create-portfolio/`: `${API_ENDPOINTS.portofolios}/${actualPortfolio.id}/`, 
-        {
-            method: isCreatePortfolioModal ? "POST": "PUT",
-            headers: {
-                'Content-Type': 'application/json',
-                'X-CSRFToken': csrfToken,
-            },
-            body: JSON.stringify(formValues)
-        })
-        .then( resp => {
-            toggleModal()
-            return resp.json()
-        })
-        .then( data => {
-            if(isCreatePortfolioModal){
-                console.log(data.portfolios)
-                setPortfolios(data.portfolios)
-                setActualPortfolio(data.portfolios.find(p => p.id == data.new_portfolio_id))
-            }else{
-                setPortfolioHasChanged(!portfolioHasChanged)
-                setActualPortfolio(data)
-            }
-            return
-        })
-        .catch(error => {
-            setModalError(error)
-            return
-        })
-    }
-
     useEffect(() => {
         if(isCreatePortfolioModal){
             setFormValues(initialValues)
@@ -84,7 +52,7 @@ const CreateRoutine = () => {
 
   return (
     <div className={modalStyle.formContainer}>
-        <form onSubmit={(e) => handleSubmit(e)}>
+        <form>
             <div className={modalStyle.formBody}>
                 <input style={{display:"none"}} type="text" name="portfolio" value={formValues.portfolio} onChange={(e) => handleChangeInput(e.target.value, e.target.name)}/>
                 <span>

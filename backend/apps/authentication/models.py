@@ -19,5 +19,5 @@ class CustomUser(AbstractUser):
 
 
 class TokenWhiteList(BaseModel):
-    token = models.CharField(max_length=100, blank=True)
+    token = models.CharField(max_length=255, blank=True)
     status = models.IntegerField(choices=TokenStatusChoices.choices, default=TokenStatusChoices.ACTIVE)

@@ -31,8 +31,8 @@ class RoutineDaysBlocksAdmin(admin.TabularInline):
     get_exercises.short_description = 'Exercises'
     get_blocks.help_text = 'Authors birthday'
 
-    def get_ordering(self, request):
-        return [Lower('day')]  # sort case insensitive
+    #def get_ordering(self, request):
+    #    return [Lower('day')]  # sort case insensitive
 
 
 class RoutineAdmin(admin.ModelAdmin):

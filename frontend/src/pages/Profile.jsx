@@ -24,7 +24,7 @@ import indexStyle from '../style/index.module.css'
 
 
 const Profile = () => {
-  const {lists, customer, getCustomerData, getLists, setCustomer} = useGlobalContext()
+  const {lists, customer, getCustomerData, getLists, setCustomer, csrfToken} = useGlobalContext()
   const {toggleModal, toStatus, setModalTitle, setModalText} = useModalContext()
   const navigate = useNavigate()
   const [repeatedUser, setRepeatedUser] = useState(false)
@@ -97,7 +97,7 @@ const Profile = () => {
     auxForm.goals = formValues.goals.map( g => g.value)
     auxForm.restrictions = formValues.restrictions.map( r => r.value)
     auxForm.trainings_preferences = formValues.trainings_preferences.map( t => t.value)
-    axios.put(`${API_ENDPOINTS.customersUpdate}/${localStorage.getItem('customer_id')}/`, auxForm, {headers: {'Authorization': localStorage.getItem('auth-token-app')}})
+    axios.put(`${API_ENDPOINTS.customersUpdate}/${localStorage.getItem('customer_id')}/`, auxForm, {headers: {'Authorization': localStorage.getItem('auth-token-app'), 'X-CSRFToken': csrfToken}})
     .then(resp  => {
       return resp.data
     })

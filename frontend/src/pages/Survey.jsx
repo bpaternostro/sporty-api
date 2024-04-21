@@ -20,7 +20,7 @@ import indexStyle from '../style/index.module.css'
 
 
 const Survey = () => {
-  const {lists, customer, getCustomerData, getLists, setCustomer, actualRoutine} = useGlobalContext()
+  const {lists, customer, getCustomerData, csrfToken, setCustomer, actualRoutine} = useGlobalContext()
   const {toggleModal, toStatus, setModalTitle, setModalText} = useModalContext()
   const [effortScale, setEffortScale] = useState(0)
   const [welfareScale, setWelfareScale] = useState(0)
@@ -56,7 +56,7 @@ const Survey = () => {
     formValues.enjoyment_scale = enjoymentScale
     formValues.welfare_scale = welfareScale
     formValues.effort_scale = effortScale
-    axios.post(`${API_ENDPOINTS.routineCustomersIndicator}/`, formValues, {headers: {'Authorization': localStorage.getItem('auth-token-app')}})
+    axios.post(`${API_ENDPOINTS.routineCustomersIndicator}/`, formValues, {headers: {'X-CSRFToken': csrfToken, 'Authorization': localStorage.getItem('auth-token-app')}})
     .then(resp  => {
       return resp.data
     })

@@ -12,8 +12,12 @@ import buttonsStyle from '../style/buttons.module.css'
 import contactStyle from '../style/contact.module.css'
 import indexStyle from '../style/index.module.css'
 
+
+import { useGlobalContext } from '../context/GlobalContextProvider';
+
 const Register = () => {
   const navigate = useNavigate()
+  const {csrfToken} = useGlobalContext()
   const [repeatedUser, setRepeatedUser] = useState(false)
   const [problemsUpdating, setProblemsUpdating] = useState(false)
   const [userId, setUserId] = useState(getUserId())
@@ -39,7 +43,7 @@ const Register = () => {
     e.preventDefault() /** Es para prevenir que el formulario se recargue y la pagina*/
     if(!userId){
       formValues.username = formValues.email
-      axios.post(API_ENDPOINTS.register, formValues)
+      axios.post(API_ENDPOINTS.register, formValues, { headers: {'Content-Type': 'application/json', 'X-CSRFToken': csrfToken}})
       .then( resp => {
         navigate(`${ROOT}/login`)
         return

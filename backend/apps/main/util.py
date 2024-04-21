@@ -6,6 +6,7 @@ import time
 # from gspread_dataframe import set_with_dataframe
 class Util:
     def __init__(self, google_file):
+        print(os.getenv("GPREADSHEET_KEY_LOCATION"))
         self.gc = gspread.service_account(
             filename=os.getenv("GPREADSHEET_KEY_LOCATION")
         )

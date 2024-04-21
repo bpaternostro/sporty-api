@@ -16,7 +16,7 @@ import buttonStyle from '../../style/buttons.module.css'
 const Navbar = () => {
     const {openProfile, setOpenProfile, openNotifications, setOpenNotifications, userData} = useGlobalContext()  
     const {setModalTitle, setModalText, toggleModal, setIsCreatePortfolioModal, setIsConfirmationModal, setIsEditModal, setIsIndicatorsModal, setIsEditPortfolioModal} = useModalContext()
-    
+
     const handlePopUp = () => {
         setModalTitle("Create a new portfolio")
         setModalText(`Insert all the information`)
@@ -45,7 +45,7 @@ const Navbar = () => {
             <nav>
                 <span className={navbarStyle.navItem}>
                     {
-                        localStorage.getItem('name') !== "" &&
+                        localStorage.getItem("name") !== null && localStorage.getItem("name") !== "" &&
                         <div className={navbarStyle.profileMenu}>
                             <button onClick={() => setOpenNotifications(!openNotifications)} className={buttonStyle.iconNavButton}>
                                 <IoNotificationsSharp size={ICON_SIZE_NORMAL}/>
@@ -62,7 +62,7 @@ const Navbar = () => {
                 </span>
                 <span className={navbarStyle.navItem}>
                     {
-                        localStorage.getItem('name') !== "" ?
+                        localStorage.getItem("name") !== null && localStorage.getItem("name") !== "" ?
                             <div className={navbarStyle.profileMenu}>
                                 <span className={navbarStyle.nickName} onClick={() => setOpenProfile(!openProfile)}>
                                     <img className={navbarStyle.avatar} src="./profile.jpg" alt={`${localStorage.getItem('name')} avatar`} />

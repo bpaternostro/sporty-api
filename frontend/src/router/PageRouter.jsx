@@ -1,12 +1,13 @@
 import React from 'react'
 import { Route, Routes } from 'react-router-dom'
-import { Home, RoutinePlayer, Identify, Login, Register, Profile, Survey } from '../pages'
+import { Home, RoutinePlayer, Identify, Landpage, Login, Register, Profile, Survey } from '../pages'
 import { ROOT } from '../apiConfig'
-import { API_ENDPOINTS } from '../apiConfig'
+
 const PageRouter = () => {
   return (
     <>
       <Routes>
+          <Route path={`${ROOT}`} element={<Landpage/>} />
           <Route path={`${ROOT}/panel`} element={<Home/>} />
           <Route path={`${ROOT}/panel/routine/:id`} element={<RoutinePlayer/>} />
           <Route path={`${ROOT}/identify`} element={<Identify/>} />

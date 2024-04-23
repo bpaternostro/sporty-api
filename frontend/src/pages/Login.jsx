@@ -96,7 +96,7 @@ const Login = () => {
                       }
                       <div className={contactStyle.forwardLinkContainer}>
                         <span className={contactStyle.forwardMessage}>Si todavia no estas registrado, podes hacerlo aqui:</span>
-                        <span><Link to={`${ROOT}/register`}>Click aqui!</Link></span>
+                        <span className={contactStyle.forwardMessageLink}><Link to={`${ROOT}/register`}>Click aqui!</Link></span>
                       </div>
                   </div>
                   <div className={contactStyle.toolBar}>

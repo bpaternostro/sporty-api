@@ -25,9 +25,13 @@ const Dashboard = () => {
                     <Widget name="Ratio esfuerzo" value={customer.kpis.ratio_effort}></Widget>
                     <Widget name="Ratio entretenimiento" value={customer.kpis.ratio_enjoyment}></Widget>
                 </div>
-                {routines.sort((a, b) => a.status_routine > b.status_routine ? 1 : -1).map( (t, i) => (
+                {routines && routines.sort((a, b) => a.status_routine > b.status_routine ? 1 : -1).map( (t, i) => (
                     <TableRow routineData={t} key={i}></TableRow>
-                ))}
+                ))
+                }
+                {
+                    !routines.length && <div className={style.errorContainerMessage}><span className={style.errorMessage}>Aun no posee una rutina asignada</span></div>
+                }
             </div>}
         </div>
     )

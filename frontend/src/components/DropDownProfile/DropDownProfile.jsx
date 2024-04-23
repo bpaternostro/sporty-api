@@ -33,7 +33,7 @@ const DropDownProfile = () => {
             localStorage.setItem('customer','')
             setUserData(false)
             setOpenProfile(!openProfile)
-            navigate(`${ROOT}/login`)
+            navigate(`${ROOT}`)
             return
         })
         .catch( (err) => {

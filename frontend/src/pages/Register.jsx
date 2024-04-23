@@ -106,7 +106,7 @@ const Register = () => {
                       {!userId ? 
                         <div className={contactStyle.forwardLinkContainer}>
                           <span className={contactStyle.forwardMessage}>Ya tenes una cuenta?</span>
-                          <span><Link to={`${ROOT}/login`}>Click aqui!</Link></span>
+                          <span className={contactStyle.forwardMessageLink}><Link to={`${ROOT}/login`}>Click aqui!</Link></span>
                         </div>
                         :
                         <div></div>

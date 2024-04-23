@@ -5,5 +5,6 @@ import Register from './Register'
 import RoutinePlayer from './RoutinePlayer'
 import Profile from './Profile'
 import Survey from './Survey'
+import Landpage from './Landpage'
 
-export { Home, Identify, Login, Profile, Register, RoutinePlayer, Survey }
+export { Home, Identify, Landpage, Login, Profile, Register, RoutinePlayer, Survey }

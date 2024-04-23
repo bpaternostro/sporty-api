@@ -3,7 +3,7 @@ const API_BASE_URL = ENV == "prod" ? 'https://bpaternostro.site/fitbox/api' : "h
 
 export const ICON_SIZE_BIG = 40
 export const ICON_SIZE_NORMAL = 22
-export const COMPANY_NAME = "FITBOX"
+export const COMPANY_NAME = "BETA"
 export const HIGHLIGHT_COLOR = "#7315fe"
 export const PASSWORD_LENGTH = 4
 export const ADMIN_ROLE = "admin"

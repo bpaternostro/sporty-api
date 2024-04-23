@@ -56,10 +56,10 @@
 }
 
 .tableHeaderTitle{
-    font-size: 24px;
+    font-size: 60px;
     font-weight: var(--font-weight-titles);
     width: 100%;
-    text-align: left;
+    text-align: center;
     padding: 10px 0px;
 }
 

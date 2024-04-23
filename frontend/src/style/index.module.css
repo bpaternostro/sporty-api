@@ -52,8 +52,8 @@ main > div {
 }
 
 a{
-    text-decoration: none;
     color: var(--color-white);
+    text-decoration: none;
 }
 
 h1, h2, h3, h4{
@@ -82,6 +82,7 @@ button{
     text-align: center;
     cursor: pointer;
 }
+
 
 input, select{
     border: 1px solid var(--body-background-color);

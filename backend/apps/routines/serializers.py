@@ -97,7 +97,9 @@ class RoutineCustomerIndicatorCalculationSerializer(serializers.ModelSerializer)
 
     def get_last_training(self, obj):
         last_training = obj.all().filter(was_completed=1).order_by("-started_on")
-        return last_training[0].started_on.date().strftime('%d-%m-%Y')
+        if len(last_training):
+            return last_training[0].started_on.date().strftime('%d-%m-%Y')
+        return None
     
     def get_training_completed_in_last_30_days(self, obj):
         today = datetime.now().date()
@@ -106,21 +108,28 @@ class RoutineCustomerIndicatorCalculationSerializer(serializers.ModelSerializer)
     
     def get_ratio_hiking(self, obj):
         last_training = obj.all().filter(was_completed=1).order_by("-started_on")
-        delta = datetime.now().date() - last_training[0].started_on.date()
-        return delta.days
+        if len(last_training):
+            delta = datetime.now().date() - last_training[0].started_on.date()
+            return delta.days
+        return None
     
     def get_ratio_effort(self, obj):
-        return round(obj.all().aggregate(Avg('effort_scale'))["effort_scale__avg"],2)
+        if len(obj.all()):
+            return round(obj.all().aggregate(Avg('effort_scale'))["effort_scale__avg"],2)
+        return 0
     
     def get_ratio_enjoyment(self, obj):
-        return round(obj.all().aggregate(Avg('enjoyment_scale'))["enjoyment_scale__avg"],2)
+        if len(obj.all()):
+            return round(obj.all().aggregate(Avg('enjoyment_scale'))["enjoyment_scale__avg"],2)
+        return 0
     
     def get_completed_training(self, obj):
         return obj.all().filter(was_completed=1).aggregate(Count("id"))["id__count"]
     
     def get_ratio_welfare(self, obj):
-        return round(obj.all().aggregate(Avg('welfare_scale'))["welfare_scale__avg"],2)
-
+        if len(obj.all()):
+            return round(obj.all().aggregate(Avg('welfare_scale'))["welfare_scale__avg"],2)
+        return 0
 
 class RoutineTargetMetaDataSerializer(serializers.ModelSerializer):
     customer_with_equipement = serializers.SerializerMethodField()

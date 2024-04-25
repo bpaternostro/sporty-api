@@ -23,7 +23,7 @@ class Command(BaseCommand):
 
         for _item in data:
 
-            restriction = Restriction.objects.create(
+            restriction = Restriction.objects.get_or_create(
                 name=_item.get("name"),
                 image=_item.get("image"),
             )

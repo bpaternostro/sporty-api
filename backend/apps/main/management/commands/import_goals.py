@@ -20,7 +20,7 @@ class Command(BaseCommand):
 
         for _item in data:
 
-            goal = Goal.objects.create(
+            goal = Goal.objects.get_or_create(
                 name=_item.get("name"),
                 image=_item.get("image"),
             )

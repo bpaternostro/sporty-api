@@ -21,6 +21,7 @@ const SliderContent = ({ currentIndex, handleNext, handleComplete, steps }) => {
     const [showDetailGlosario, setShowDetailGlosario] = useState(false)
     const {name, description} = currentStep || {}
     const iconSize = 18
+    const stepLength =  steps ? steps.length - 1 : 0
 
     const handleShowDetail = () => {
       setShowDetail(!showDetail)
@@ -96,7 +97,8 @@ const SliderContent = ({ currentIndex, handleNext, handleComplete, steps }) => {
           }
         </span>
         <ExerciseList block={currentStep} />
-        {currentIndex === steps.length - 1 ? (
+        {
+          currentIndex === stepLength ? (
           <FormElement
             value={"Fin de la rutina"}
             onClick={() => handleComplete(currentIndex)}

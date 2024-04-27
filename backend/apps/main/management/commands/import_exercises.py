@@ -44,7 +44,7 @@ class Command(BaseCommand):
 
                 level = _get_or_create_obj(Level, name=_item.get("level"))
                     
-                exercise = Exercise.objects.get_or_create(
+                exercise = Exercise.objects.create(
                     name=name,
                     description=_item.get("description"),
                     type=_get_choice_id(ExerciseTypeChoices.choices, _item.get("tipo")),

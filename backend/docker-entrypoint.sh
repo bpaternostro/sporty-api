@@ -28,19 +28,6 @@ python manage.py migrate customers
 python manage.py migrate authentication
 python manage.py migrate routines
 
-# Preparing data
-echo "Importing data"
-python manage.py import_days
-python manage.py import_levels
-python manage.py import_goals
-python manage.py import_restrictions
-python manage.py import_customer
-python manage.py import_muscle_group
-python manage.py import_exercises
-python manage.py import_blocks
-python manage.py import_routines
-python manage.py import_routines_days_blocks
-
 python manage.py create_superuser
 
 python manage.py collectstatic --no-input # this move all static files to server

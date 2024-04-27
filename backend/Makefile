@@ -53,7 +53,6 @@ import_all:
 	pipenv run python manage.py import_routines
 	pipenv run python manage.py import_routines_days_blocks
 
-
 test:
 	pipenv run pytest -s --durations=10 --create-db
 

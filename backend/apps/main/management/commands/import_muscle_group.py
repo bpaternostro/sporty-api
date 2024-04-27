@@ -27,7 +27,7 @@ class Command(BaseCommand):
                 _item.get("name") not in self.list_of_muscle_group
             ):  # check if muscle_group is repeated
 
-                muscle_group = MuscleGroup.objects.get_or_create(
+                muscle_group = MuscleGroup.objects.create(
                     name=_item.get("name"),
                     muscle_group_type=_get_choice_id(MuscleGroupTypeChoices.choices, _item.get("type")),
                     image=_item.get("image"),

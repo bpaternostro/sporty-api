@@ -126,13 +126,20 @@ const TableRow = ({routineData}) => {
                     <span>
                       <span className={styles.mobileLabel}><SiLevelsdotfyi size={ICON_SIZE_NORMAL} color={"#FFF"} title="nivel"/></span>
                       <div>
-                        {metadatas.level.map( (l, i) => <span key={i} className={styles.mobileLabelValue}>{l.name}</span>)}
+                        {metadatas ? 
+                          metadatas.level.map( (l, i) => <span key={i} className={styles.mobileLabelValue}>{l.name}</span>)
+                          : <span></span>
+                        }
                       </div>
                     </span>
                     <span>
                           <span className={styles.mobileLabel}><TfiTarget size={ICON_SIZE_NORMAL} color={"#FFF"} title="objetivos"/></span>
                           <div>
-                            {metadatas.goals.map( (g, i) => <span key={i} className={styles.mobileLabelValue}>{g.name}</span>)}
+                            {metadatas ?  
+                              metadatas.goals.map( (g, i) => <span key={i} className={styles.mobileLabelValue}>{g.name}</span>)
+                            :
+                              <span></span>
+                            }
                           </div>
                     </span>
                     <span>
@@ -188,7 +195,11 @@ const TableRow = ({routineData}) => {
                         <span>
                           <span className={styles.mobileLabel}><AiFillStop size={ICON_SIZE_NORMAL} color={"#FFF"} title="restricciones"/></span>
                           <div>
-                            {restrictions.map( (r, i) => <span key={i} className={styles.mobileLabelValue}>{r.name}</span>)}
+                            {restrictions ?
+                              restrictions.map( (r, i) => <span key={i} className={styles.mobileLabelValue}>{r.name}</span>)
+                              :
+                              <span></span>
+                            }
                           </div>
                         </span>
                     </div>

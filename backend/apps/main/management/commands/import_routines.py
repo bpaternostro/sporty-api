@@ -54,7 +54,7 @@ class Command(BaseCommand):
                     for m in _item.get("restrictions").split(",")
                 ]
 
-                routine = Routine.objects.create(
+                routine = _get_or_create_obj(Routine,
                     name=_item.get("name"),
                     description=_item.get("description"),
                     routine_type=routine_type,

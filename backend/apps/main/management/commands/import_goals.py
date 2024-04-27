@@ -3,7 +3,7 @@ import os
 from apps.routines.models import *
 from apps.main.models import *
 from django.core.management.base import BaseCommand, CommandError
-from ..core_methods import _get_data_from_gsheet
+from ..core_methods import _get_data_from_gsheet, _get_or_create_obj
 
 class Command(BaseCommand):
     help = "Imports goals from a dataset"
@@ -20,9 +20,6 @@ class Command(BaseCommand):
 
         for _item in data:
 
-            goal = Goal.objects.create(
-                name=_item.get("name"),
+            _get_or_create_obj(Goal,name=_item.get("name"),
                 image=_item.get("image"),
             )
-
-            goal.save()

@@ -3,7 +3,7 @@ import os
 from apps.routines.models import *
 from apps.main.models import *
 from django.core.management.base import BaseCommand, CommandError
-from ..core_methods import _get_data_from_gsheet
+from ..core_methods import _get_data_from_gsheet, _get_or_create_obj
 
 class Command(BaseCommand):
     help = "Imports levels from a dataset"
@@ -19,10 +19,7 @@ class Command(BaseCommand):
         )
 
         for _item in data:
-
-            level = Level.objects.create(
+            _get_or_create_obj(Level,
                 name=_item.get("name"),
                 image=_item.get("image"),
             )
-
-            level.save()

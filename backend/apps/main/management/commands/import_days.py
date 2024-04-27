@@ -20,9 +20,4 @@ class Command(BaseCommand):
         )
 
         for _item in data:
-
-            day = Day.objects.create(
-                name=_item.get("name"),
-            )
-
-            day.save()
+            _get_or_create_obj(Day,name=_item.get("name"))

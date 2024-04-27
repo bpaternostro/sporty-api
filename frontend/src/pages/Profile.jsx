@@ -24,7 +24,7 @@ import indexStyle from '../style/index.module.css'
 
 
 const Profile = () => {
-  const {lists, customer, getCustomerData, getLists, setCustomer, csrfToken} = useGlobalContext()
+  const {lists, customer, getCustomerData, getLists, setCustomer, csrfToken, setLoading} = useGlobalContext()
   const {toggleModal, toStatus, setModalTitle, setModalText} = useModalContext()
   const navigate = useNavigate()
   const [repeatedUser, setRepeatedUser] = useState(false)
@@ -110,6 +110,7 @@ const Profile = () => {
       return
     })
     .finally(() => {
+      setLoading(false)
       setModalTitle("Perfil de usuario")
       setModalText("Sus cambios fueron ingresados correctamente.")
       toggleModal()
@@ -163,6 +164,12 @@ const Profile = () => {
     navigate(`${ROOT}/panel`)
     return
   };
+
+  const _handleSave = () => {
+    setLoading(true)
+    return
+  };
+
 
   return (
       <main className={profileStyle.profileContainer}>
@@ -223,7 +230,7 @@ const Profile = () => {
                     <Select
                       isMulti
                       name="goals"
-                      options={lists.goals || []}
+                      options={lists && lists.goals || []}
                       className="basic-multi-select"
                       classNamePrefix="select"
                       value={formValues.goals}
@@ -235,7 +242,7 @@ const Profile = () => {
                     <Select
                       isMulti
                       name="restrictions"
-                      options={lists.restrictions}
+                      options={lists && lists.restrictions}
                       className="basic-multi-select"
                       classNamePrefix="select"
                       value={formValues.restrictions}
@@ -247,7 +254,7 @@ const Profile = () => {
                     <Select
                       isMulti
                       name="trainings_preferences"
-                      options={lists.trainings}
+                      options={lists && lists.trainings}
                       className="basic-multi-select"
                       classNamePrefix="select"
                       value={formValues.trainings_preferences}
@@ -266,8 +273,7 @@ const Profile = () => {
                   </label>
                   <label htmlFor="customer_with_equipement">
                     <span>Cuenta con equipamiento</span>
-                    <Switch 
-                      trackColor={{false: '#767577', true: '#7315fe'}}
+                    <Switch
                       name="customer_with_equipement" 
                       onChange={handleToogleHasEquipmentChange} checked={hasEquiment} 
                     />
@@ -287,7 +293,7 @@ const Profile = () => {
                 </div>
                 <div className={profileStyle.toolBar}>
                     <button onClick={_handleOmit} className={buttonsStyle.buttonPrimary}>Volver</button>
-                    <button type='submit' className={buttonsStyle.buttonPrimary}>Guardar</button>
+                    <button type='submit' className={buttonsStyle.buttonPrimary} onClick={_handleSave}>Guardar</button>
                 </div>
             </form>
         </div>

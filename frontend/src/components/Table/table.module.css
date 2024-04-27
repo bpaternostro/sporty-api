@@ -73,7 +73,7 @@
 .mobileLabelValue{
     border-radius: 5px;
     background-color: var(--body-background-color);
-    padding: 5px;
+    padding: 12px;
     font-size: 14px;
 }
 
@@ -126,7 +126,7 @@
     align-items: start;
     justify-content: space-evenly;
     flex-wrap: wrap;
-    gap:5px;
+    gap:15px;
     width: 100%;
     padding: 10px;
 }

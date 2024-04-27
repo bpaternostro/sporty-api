@@ -52,14 +52,7 @@ const TableRow = ({routineData}) => {
     const {customer, routines, setActualRoutine, setCurrentIndex} = useGlobalContext();
     const {setModalTitle, 
           setModalText, 
-          toggleModal, 
-          setIsIndicatorsModal, 
-          setIsEditModal, 
-          setIsCreatePortfolioModal, 
-          setIsConfirmationModal, 
-          setIsEditPortfolioModal,
-          setIsSellBookModal,
-          setIsSelltableModal} = useModalContext()
+          toggleModal} = useModalContext()
     const [selected, setSelected] = useState(false)
 
     const handlePopUpIndicators = (e) => {
@@ -84,7 +77,7 @@ const TableRow = ({routineData}) => {
 
     const globalStatus = 1
     const metadatas = routine_metadata[0]
-    const DISABLED_COLOR = "#010101"
+    const DISABLED_COLOR = "#101820"
     const ENABLED_COLOR = "#FFF"
     const STATUS_OK_COLOR = "#3ED17A"
     const STATUS_NOT_OK_COLOR = "#C70039"

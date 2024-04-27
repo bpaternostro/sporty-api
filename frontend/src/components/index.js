@@ -18,6 +18,7 @@ import RoutineDay from "./RoutineDay/RoutineDay"
 import Sidebar from "./Sidebar/Sidebar"
 import Slider from "./Slider/Slider"
 import SliderContent from "./Slider/SliderContent"
+import Spinner from "./Spinner/Spinner"
 import Nps from "./Nps/Nps"
 import Step from "./Slider/Step"
 import Tab from "./Tab/Tab"
@@ -41,6 +42,7 @@ export {CreateRoutine,
         Sidebar, 
         Slider,
         SliderContent,
+        Spinner,
         Step,
         TableHeader, 
         TableRow, 

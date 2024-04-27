@@ -15,7 +15,7 @@ import indexStyle from '../style/index.module.css'
 import { useGlobalContext } from '../context/GlobalContextProvider';
 
 const Login = () => {
-  const {setUserData, getCustomerData, getLists, csrfToken} = useGlobalContext()
+  const {setUserData, getCustomerData, getLists, csrfToken, setLoading} = useGlobalContext()
   const navigate = useNavigate()
   const [errorLogin, setErrorLogin] = useState(false)
   const initialValues = {
@@ -32,6 +32,7 @@ const Login = () => {
 
   const handleSubmit = async (e) => {
     e.preventDefault() /** Es para prevenir que el formulario se recargue y la pagina*/
+    setLoading(true)
     fetch(API_ENDPOINTS.login, {
           mode: 'cors',
           method: 'post',
@@ -74,6 +75,9 @@ const Login = () => {
       console.log(error)
       setErrorLogin(true)
    })
+   .finally(() => {
+      setLoading(false)
+    })
   }
   return (
       <main className={contactStyle.contactContainer}>

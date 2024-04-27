@@ -78,7 +78,7 @@ CACHES = {
 }
 
 # Set cache timeout (optional)
-CACHE_TIMEOUT = 900  # 15 minutes
+CACHE_TIMEOUT = 1400  # 22 minutes
 
 CORS_ALLOW_METHODS = [
     'GET',

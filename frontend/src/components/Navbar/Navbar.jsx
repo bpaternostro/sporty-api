@@ -1,13 +1,14 @@
-import React from 'react'
-import { Link } from 'react-router-dom'
+import React, { useEffect } from 'react'
+
+import { useNavigate, Link } from 'react-router-dom'
 import { FaUserAlt } from 'react-icons/fa'
 import { IoNotificationsSharp } from "react-icons/io5";
 import { BsWhatsapp } from "react-icons/bs";
 
 import { useGlobalContext } from '../../context/GlobalContextProvider'
-import { useModalContext } from '../../context/ModalContextProvider'
 
 import { DropDownProfile, DropDownNotification } from '../'
+import { verifyUser } from '../../helpers/verifyToken';
 
 import {ROOT, COMPANY_NAME, ICON_SIZE_NORMAL, API_ENDPOINTS} from '../../apiConfig'
 import navbarStyle from './navbar.module.css'
@@ -15,29 +16,11 @@ import buttonStyle from '../../style/buttons.module.css'
 
 const Navbar = () => {
     const {openProfile, setOpenProfile, openNotifications, setOpenNotifications, userData} = useGlobalContext()  
-    const {setModalTitle, setModalText, toggleModal, setIsCreatePortfolioModal, setIsConfirmationModal, setIsEditModal, setIsIndicatorsModal, setIsEditPortfolioModal} = useModalContext()
-
-    const handlePopUp = () => {
-        setModalTitle("Create a new portfolio")
-        setModalText(`Insert all the information`)
-        setIsConfirmationModal(false)
-        setIsEditModal(false)
-        setIsIndicatorsModal(false)
-        setIsCreatePortfolioModal(true)
-        setIsEditPortfolioModal(false)
-        toggleModal(true)
-    }
-
-    const handlePopUpEditPortfolio = () => {
-        setModalTitle("Edit portfolio")
-        setModalText(`Edit all the information`)
-        setIsConfirmationModal(false)
-        setIsEditModal(false)
-        setIsIndicatorsModal(false)
-        setIsCreatePortfolioModal(false)
-        setIsEditPortfolioModal(true)
-        toggleModal(true)
-    }
+    const navigate = useNavigate()
+ 
+    useEffect(() => {
+        verifyUser(navigate)
+    },[])
 
     return (
         <header>    
@@ -45,7 +28,7 @@ const Navbar = () => {
             <nav>
                 <span className={navbarStyle.navItem}>
                     {
-                        localStorage.getItem("name") !== null && localStorage.getItem("name") !== "" &&
+                        localStorage.getItem("name") !== "" &&
                         <div className={navbarStyle.profileMenu}>
                             <button onClick={() => setOpenNotifications(!openNotifications)} className={buttonStyle.iconNavButton}>
                                 <IoNotificationsSharp size={ICON_SIZE_NORMAL}/>
@@ -62,7 +45,7 @@ const Navbar = () => {
                 </span>
                 <span className={navbarStyle.navItem}>
                     {
-                        localStorage.getItem("name") !== null && localStorage.getItem("name") !== "" ?
+                        localStorage.getItem("name") !== "" ?
                             <div className={navbarStyle.profileMenu}>
                                 <span className={navbarStyle.nickName} onClick={() => setOpenProfile(!openProfile)}>
                                     <img className={navbarStyle.avatar} src="./profile.jpg" alt={`${localStorage.getItem('name')} avatar`} />

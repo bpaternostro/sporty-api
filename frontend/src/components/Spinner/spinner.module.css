@@ -1,0 +1,40 @@
+.spinner {
+    border: 10px solid rgba(240, 240, 240, 0.1);
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    border-left-color: var(--color-th);
+    
+    position: absolute;
+    z-index: 1005;
+    animation: spin 1s ease infinite;
+  }
+
+.spinnerContainer, .overlay {
+    width: 100vw;
+    height: 100vh;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    position: fixed;
+    z-index: 1001;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.overlay {
+    background: rgba(49,49,49,0.7);
+    /*background: rgb(115, 21, 254, 0.8);*/
+}
+
+@keyframes spin {
+    0% {
+        transform: rotate(0deg);
+    }
+
+    100% {
+        transform: rotate(360deg);
+    }
+}

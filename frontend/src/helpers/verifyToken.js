@@ -37,8 +37,9 @@ export const verifyUser = (navigate) =>{
       localStorage.setItem('name','')
       localStorage.setItem('customer_id','')
       localStorage.setItem('customer','')
-      return
+      return false
     }
+    return true
   })
   .catch(error => {
     navigate(`${ROOT}/login`)
@@ -46,7 +47,7 @@ export const verifyUser = (navigate) =>{
     localStorage.setItem('name','')
     localStorage.setItem('customer_id','')
     localStorage.setItem('customer','')
-    return
+    return false
   })
 }
 

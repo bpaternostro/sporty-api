@@ -8,7 +8,7 @@ import { routinesMock } from '../mockRoutine'
 
 const GlobalContext = createContext()
 const GlobalContextProvider = ({children}) => {
-  const [loading, setLoading] = useState(true)
+  const [loading, setLoading] = useState(false)
   const [routines, setRoutines] = useState([])
   const [customer, setCustomer] = useState(null)
   const [actualRoutine, setActualRoutine] = useState(false)
@@ -45,7 +45,6 @@ const GlobalContextProvider = ({children}) => {
   }
 
   const getCustomerData = () =>{
-    setLoading(!loading)
     fetch(API_ENDPOINTS.customers + `/${localStorage.getItem('customer_id')}`, {
       mode: 'cors',
       method: 'get',
@@ -64,9 +63,6 @@ const GlobalContextProvider = ({children}) => {
     .then( data => {
       setCustomer(data)
       setRoutines(data.routines)
-    })
-    .finally(() => {
-      setLoading(!loading)
     })  
   }
 

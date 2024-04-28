@@ -3,7 +3,7 @@ from django.utils.html import format_html
 from django.db.models.functions import Lower
 from django.forms import Select
 from django.db import models
-from ..models import RoutineDaysBlocks, Routine, RoutineTargetMetaData
+from ..models import RoutineDaysBlocks, Routine, RoutineTargetMetaData, RoutineCustomers
 
 
 class RoutineMetaDataAdmin(admin.TabularInline):
@@ -48,4 +48,10 @@ class RoutineAdmin(admin.ModelAdmin):
     get_days.short_description = 'Days'
 
 
+class RoutineCustomerAdmin(admin.ModelAdmin):
+    list_display = ["customer", "routine", "status"]
+    model = RoutineCustomers
+    
+
 admin.site.register(Routine, RoutineAdmin)
+admin.site.register(RoutineCustomers, RoutineCustomerAdmin)

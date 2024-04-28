@@ -188,20 +188,20 @@ class RoutineSerializer(serializers.ModelSerializer):
         return RoutineDaysBlocksSerializer(routine_day_blocks, many=True).data
     
     def get_status_routine(self, obj):
-        customer_routine = RoutineCustomers.objects.get(routine=obj)
-        return customer_routine.status
+        customer_routine = RoutineCustomers.objects.filter(routine=obj).order_by("start_date")
+        return customer_routine[0].status
     
     def get_start_date(self, obj):
-        customer_routine = RoutineCustomers.objects.get(routine=obj)
-        return customer_routine.start_date.strftime('%d-%m-%Y')
+        customer_routine = RoutineCustomers.objects.filter(routine=obj).order_by("start_date")
+        return customer_routine[0].start_date.strftime('%d-%m-%Y')
     
     def get_due_date(self, obj):
-        customer_routine = RoutineCustomers.objects.get(routine=obj)
-        return customer_routine.due_date.strftime('%d-%m-%Y')
+        customer_routine = RoutineCustomers.objects.filter(routine=obj).order_by("start_date")
+        return customer_routine[0].due_date.strftime('%d-%m-%Y')
 
     def get_observation(self, obj):
-        customer_routine = RoutineCustomers.objects.get(routine=obj)
-        return customer_routine.observation
+        customer_routine = RoutineCustomers.objects.filter(routine=obj).order_by("start_date")
+        return customer_routine[0].observation
     
 
 class RoutineSerializerDetail(serializers.ModelSerializer):
